@@ -1,11 +1,9 @@
-const n = 4
-const m = 2
+const express = require('express')
+const app = express()
 
-const result = multiply(n, m)
+app.get('/add-ten-to/:number', (req, res) => {
+  const result = 10 + req.params.number
+  res.send(result)
+})
 
-console.log(result)
-
-function multiply(n, m) {
-  const p = n * m
-  return p
-}
+app.listen(3000, () => console.log('Server started.'))
